@@ -15,6 +15,13 @@ name: Xiaomi-Redmi-AX6000
 on:
   repository_dispatch:
   workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+  schedule:
+    # - cron: "0 0 ? * FRI"
 
 env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
