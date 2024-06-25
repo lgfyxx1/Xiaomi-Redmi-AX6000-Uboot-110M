@@ -20,8 +20,24 @@ on:
         description: 'SSH connection to Actions'
         required: false
         default: 'false'
-  schedule:
-    # - cron: "0 0 ? * FRI"
+
+### 界面控制部分结束 ( 以上内容请保持不变 )
+
+  ## Git Push 时触发编译(不要删除此行注释)
+  #push:
+  #  branches: 
+  #    - master
+  
+  ## 定时触发编译(不要删除此行注释)
+  #schedule:
+  #  - cron: 0 8 * * 5
+  
+  ## 重新点亮 Star 时触发编译(不要删除此行注释)
+  #watch:
+  #  types: [started]
+
+### 请按需求修改以下内容
+### 环境变量设置
 
 env:
   REPO_URL: https://github.com/hanwckf/immortalwrt-mt798x
