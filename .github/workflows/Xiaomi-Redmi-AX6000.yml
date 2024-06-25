@@ -71,6 +71,15 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
+        rm -rf feeds/packages/net/xray-core
+        rm -rf feeds/luci/applications/luci-app-passwall
+        rm -rf feeds/packages/lang/golang
+        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+        sed -i "/passwall/d" "feeds.conf.default"
+        echo "src-git passwall https://github.com/xiaorouji/openwrt-passwall.git" >> "feeds.conf.default"
+        ./scripts/feeds update passwall
+        ./scripts/feeds install -a -f -p passwall
+
     - name: 加载config & DIY_P2_SH
       run: |
         [ -e files ] && mv files openwrt/files
