@@ -93,11 +93,9 @@ jobs:
         cd openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-
         rm -rf package/feeds/luci/luci-app-passwall
         rm -rf package/feeds/packages/xray-core
         rm -rf package/feeds/packages/xray-plugin
-
         ln -s $(pwd)/feeds/openwrt_kiddin9/luci-app-passwall package/feeds/luci
         ln -s $(pwd)/feeds/openwrt_kiddin9/xray-core package/feeds/packages
         ln -s $(pwd)/feeds/openwrt_kiddin9/xray-plugin package/feeds/packages
