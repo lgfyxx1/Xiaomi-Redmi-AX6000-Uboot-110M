@@ -97,12 +97,10 @@ jobs:
         rm -rf package/feeds/luci/luci-app-passwall
         rm -rf package/feeds/packages/xray-core
         rm -rf package/feeds/packages/xray-plugin
-        rm -rf package/feeds/luci/luci-app-openclash
 
         ln -s $(pwd)/feeds/openwrt_kiddin9/luci-app-passwall package/feeds/luci
         ln -s $(pwd)/feeds/openwrt_kiddin9/xray-core package/feeds/packages
         ln -s $(pwd)/feeds/openwrt_kiddin9/xray-plugin package/feeds/packages
-        ln -s $(pwd)/feeds/openwrt_kiddin9/luci-app-openclash package/feeds/luci
 
     - name: 加载config & DIY_P2_SH
       run: |
