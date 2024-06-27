@@ -104,13 +104,15 @@ jobs:
         ./scripts/feeds install -d y -p istore luci-app-store
         ./scripts/feeds install -a -p passwallpackages
         ./scripts/feeds install -d y -p passwall luci-app-passwall
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
 
         echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages;master' >> feeds.conf.default
         ./scripts/feeds update kiddin9
         ./scripts/feeds install -d y -p kiddin9 luci-app-onliner
         ./scripts/feeds install -d y -p kiddin9 luci-app-openclash
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+
+
         
 
         rm -rf feeds/packages/lang/golang
