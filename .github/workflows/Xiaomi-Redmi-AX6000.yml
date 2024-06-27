@@ -93,10 +93,11 @@ jobs:
       run: |
         cd openwrt
         echo >> feeds.conf.default
+        echo 'src-git aliyunwebdave https://github.com/messense/aliyundrive-webdav;main' >> feeds.conf.default
         echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >> feeds.conf.default
         echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages;main' >> feeds.conf.default
         echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-
+        
         ./scripts/feeds update istore
         ./scripts/feeds update passwallpackages
         ./scripts/feeds update passwall
