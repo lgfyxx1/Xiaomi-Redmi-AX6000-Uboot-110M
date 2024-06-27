@@ -111,7 +111,6 @@ jobs:
         ./scripts/feeds update kiddin9
         ./scripts/feeds install -d y -p kiddin9 luci-app-onliner
         ./scripts/feeds install -d y -p kiddin9 luci-app-openclash
-        ./scripts/feeds install -d y -p kiddin9 luci-app-speedtest-web
         
 
         rm -rf feeds/packages/lang/golang
