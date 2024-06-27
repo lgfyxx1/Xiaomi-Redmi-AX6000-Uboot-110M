@@ -91,12 +91,6 @@ jobs:
     - name: 更新 & 安装 feeds
       run: |
         cd openwrt
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-
-        rm -rf feeds/packages/lang/golang
-        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-
         echo >> feeds.conf.default
         echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >> feeds.conf.default
         echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages;main' >> feeds.conf.default
@@ -108,6 +102,12 @@ jobs:
         ./scripts/feeds install -d y -p istore luci-app-store
         ./scripts/feeds install -a -p passwallpackages
         ./scripts/feeds install -d y -p passwall luci-app-passwall
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
+
+        rm -rf feeds/packages/lang/golang
+        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+
         
 # rm -rf package/feeds/luci/luci-app-passwall
 # rm -rf package/feeds/packages/xray-core
