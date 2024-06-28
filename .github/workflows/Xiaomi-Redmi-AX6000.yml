@@ -94,16 +94,16 @@ jobs:
         cd openwrt
         echo >> feeds.conf.default
         echo 'src-git aliyunwebdave https://github.com/messense/aliyundrive-webdav;main' >> feeds.conf.default
-        echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >> feeds.conf.default
-        echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages;main' >> feeds.conf.default
+        # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >> feeds.conf.default
+        # echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages;main' >> feeds.conf.default
         echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
         echo 'src-git vernesongopenclash https://github.com/vernesong/OpenClash;master' >> feeds.conf.default
           
         ./scripts/feeds update passwallpackages
         ./scripts/feeds update passwall
         ./scripts/feeds update vernesongopenclash
-        ./scripts/feeds install -a -p passwallpackages
-        ./scripts/feeds install -d y -p passwall luci-app-passwall
+        # ./scripts/feeds install -a -p passwallpackages
+        # ./scripts/feeds install -d y -p passwall luci-app-passwall
         ./scripts/feeds install -d y -p vernesongopenclash luci-app-openclash
         ./scripts/feeds update -a
         ./scripts/feeds install -a
@@ -118,6 +118,15 @@ jobs:
         pushd feeds/packages/lang
         rm -rf golang && git clone https://github.com/sbwml/packages_lang_golang -b 22.x
         popd
+
+        pushd feeds/luci
+        rm -rf luci-app-passwall && git clone https://github.com/xiaorouji/openwrt-passwall
+        popd
+
+        pushd feeds/packages
+        rm -rf xray-core && rm -rf xray-core xray-plugin && git clone https://github.com/xiaorouji/openwrt-passwall-packages
+        popd
+
 
         
 # rm -rf package/feeds/luci/luci-app-passwall
