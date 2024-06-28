@@ -112,11 +112,11 @@ jobs:
         ./scripts/feeds update kiddin9
         ./scripts/feeds install -d y -p kiddin9 luci-app-onliner
 
-        rm -rf feeds/packages/lang/golang
-        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+        # rm -rf feeds/packages/lang/golang
+        # git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
 
         pushd feeds/packages/lang
-        rm -rf golang && svn co https://github.com/sbwml/packages_lang_golang -b 22.x
+        rm -rf golang && git clone https://github.com/sbwml/packages_lang_golang -b 22.x
         popd
 
         
