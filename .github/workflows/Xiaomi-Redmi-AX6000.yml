@@ -92,49 +92,48 @@ jobs:
     - name: 更新 & 安装 feeds
       run: |
         cd openwrt
+        
+        # 为空行，确保后续echo追加不会出现行首注释影响
         echo >> feeds.conf.default
-        echo 'src-git aliyunwebdave https://github.com/messense/aliyundrive-webdav;main' >> feeds.conf.default
+
+        # 添加新的 feeds 源
+        echo 'src-git aliyunwebdav https://github.com/messense/aliyundrive-webdav;main' >> feeds.conf.default
         # echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >> feeds.conf.default
         # echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages;main' >> feeds.conf.default
         echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
         echo 'src-git vernesongopenclash https://github.com/vernesong/OpenClash;master' >> feeds.conf.default
-          
-        ./scripts/feeds update passwallpackages
-        ./scripts/feeds update passwall
+
+        # 更新和安装特定 feeds
         ./scripts/feeds update vernesongopenclash
-        # ./scripts/feeds install -a -p passwallpackages
-        # ./scripts/feeds install -d y -p passwall luci-app-passwall
         ./scripts/feeds install -d y -p vernesongopenclash luci-app-openclash
+       
+        # 更新所有 feeds
         ./scripts/feeds update -a
-        ./scripts/feeds install -a
 
-        echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages;master' >> feeds.conf.default
-        ./scripts/feeds update kiddin9
-        ./scripts/feeds install -d y -p kiddin9 luci-app-onliner
-
-        # rm -rf feeds/packages/lang/golang
-        # git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-
-        pushd feeds/packages/lang
-        rm -rf golang && git clone https://github.com/sbwml/packages_lang_golang -b 22.x
-        popd
-
+        # 删除并替换 luci-app-passwall
+        echo "Removing passwall, and cloning new versions"
         pushd feeds/luci
         rm -rf luci-app-passwall && git clone https://github.com/xiaorouji/openwrt-passwall
         popd
 
+        # 删除并替换 xray-core 和 xray-plugin
+        echo "Removing old versions of xray-core and xray-plugin, and cloning new versions"
         pushd feeds/packages
-        rm -rf xray-core && rm -rf xray-core xray-plugin && git clone https://github.com/xiaorouji/openwrt-passwall-packages
+        rm -rf xray-core xray-plugin && git clone https://github.com/xiaorouji/openwrt-passwall-packages
         popd
 
+        # 安装所有 feeds
+        ./scripts/feeds install -a
 
+        # 删除旧版的 golang 包并替换为新的 22.x 版本
+        rm -rf feeds/packages/lang/golang
+        git clone --branch 22.x --depth 1 https://github.com/sbwml/packages_lang_golang.git feeds/packages/lang/golang
+
+        # 添加新的 feeds 源
+        echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages;master' >> feeds.conf.default
+        ./scripts/feeds update kiddin9
+        ./scripts/feeds install -d y -p kiddin9 luci-app-onliner
         
-# rm -rf package/feeds/luci/luci-app-passwall
-# rm -rf package/feeds/packages/xray-core
-# rm -rf package/feeds/packages/xray-plugin
-# ln -s $(pwd)/feeds/openwrt-passwall/luci-app-passwall package/feeds/luci
-# ln -s $(pwd)/feeds/openwrt-passwall-packages/xray-core package/feeds/packages
-# ln -s $(pwd)/feeds/openwrt-passwall-packages/xray-plugin package/feeds/packages
 
     - name: 加载config & DIY_P2_SH
       run: |
