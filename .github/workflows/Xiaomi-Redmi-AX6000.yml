@@ -96,24 +96,26 @@ jobs:
         echo 'src-git aliyunwebdave https://github.com/messense/aliyundrive-webdav;main' >> feeds.conf.default
         echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >> feeds.conf.default
         echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages;main' >> feeds.conf.default
-        echo 'src-git istore https://github.com/linkease/istore;main' >> feeds.conf.default
-        
-        ./scripts/feeds update istore
+        echo 'src-git istore https://github.com/jjm2473/packages;openwrt-21.02' >> feeds.conf.default
+        echo 'src-git vernesongopenclash https://github.com/vernesong/OpenClash;master' >> feeds.conf.default
+          
         ./scripts/feeds update passwallpackages
         ./scripts/feeds update passwall
-        ./scripts/feeds install -d y -p istore luci-app-store
+        ./scripts/feeds update istore
+        ./scripts/feeds update vernesongopenclash
+        
         ./scripts/feeds install -a -p passwallpackages
         ./scripts/feeds install -d y -p passwall luci-app-passwall
+        ./scripts/feeds install -d y -p istore luci-app-store
+        ./scripts/feeds install -d y -p vernesongopenclash luci-app-openclash
+
+
+        ./scripts/feeds update -a
+        ./scripts/feeds install -a
 
         echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages;master' >> feeds.conf.default
         ./scripts/feeds update kiddin9
         ./scripts/feeds install -d y -p kiddin9 luci-app-onliner
-        ./scripts/feeds install -d y -p kiddin9 luci-app-openclash
-        ./scripts/feeds update -a
-        ./scripts/feeds install -a
-
-
-        
 
         rm -rf feeds/packages/lang/golang
         git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
