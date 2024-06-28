@@ -91,7 +91,6 @@ jobs:
 
     - name: 更新 & 安装 feeds
       run: |
-        echo >> feeds.conf.default
         echo 'src-git aliyunwebdave https://github.com/messense/aliyundrive-webdav;main' >> feeds.conf.default
         echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall;main' >> feeds.conf.default
         echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages;main' >> feeds.conf.default
