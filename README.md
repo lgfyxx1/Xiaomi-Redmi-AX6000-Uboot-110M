@@ -10,16 +10,11 @@ A template for building OpenWrt with GitHub Actions
 
 ## Usage
 
-- 包含237大神及hanwckf大神immortalwrt-mt798x
-- immortalwrt openwrt-21.02 稳定版分支
-- 为了方便编译移除21.02 luci及packages自带的SSR及Passwall源码, 方便直接拉取最新版
-- 固件新增Passwall,Istore, Aliyunwebdav,网络加速及Openclash插件
+## - 包含237大神及hanwckf大神immortalwrt-mt798x
+## - immortalwrt openwrt-21.02 稳定版分支
+## - 为了方便编译移除21.02 luci及packages自带的SSR及Passwall源码, 方便直接拉取最新版
+## - 固件新增Passwall,Istore, Aliyunwebdav,网络加速及Openclash插件
 
-
-## Tips
-
-- It may take a long time to create a `.config` file and build the OpenWrt firmware. Thus, before create repository to build your own firmware, you may check out if others have already built it which meet your needs by simply [search `Actions-Openwrt` in GitHub](https://github.com/search?q=Actions-openwrt).
-- Add some meta info of your built firmware (such as firmware architecture and installed packages) to your repository introduction, this will save others' time.
 
 ## Credits
 
