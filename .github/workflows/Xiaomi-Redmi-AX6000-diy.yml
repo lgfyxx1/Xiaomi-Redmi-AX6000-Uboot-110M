@@ -94,16 +94,8 @@ jobs:
         cd openwrt
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        
         rm -rf feeds/packages/lang/golang
         git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-        
-# rm -rf package/feeds/luci/luci-app-passwall
-# rm -rf package/feeds/packages/xray-core
-# rm -rf package/feeds/packages/xray-plugin
-# ln -s $(pwd)/feeds/openwrt-passwall/luci-app-passwall package/feeds/luci
-# ln -s $(pwd)/feeds/openwrt-passwall-packages/xray-core package/feeds/packages
-# ln -s $(pwd)/feeds/openwrt-passwall-packages/xray-plugin package/feeds/packages
         
     - name: 加载config & DIY_P2_SH
       run: |
