@@ -1,6 +1,6 @@
 **English** | [中文](https://p3terx.com/archives/build-openwrt-with-github-actions.html)
 
-# Xiaomi-Redmi-AX6000 小米红米AX6000固件在线编译
+# Xiaomi-Redmi-AX6000 <br /> 小米红米AX6000固件在线编译
 
 [![LICENSE](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square&label=LICENSE)](https://github.com/P3TERX/Actions-OpenWrt/blob/master/LICENSE)
 ![GitHub Stars](https://img.shields.io/github/stars/P3TERX/Actions-OpenWrt.svg?style=flat-square&label=Stars&logo=github)
@@ -10,10 +10,10 @@ A template for building OpenWrt with GitHub Actions
 
 ## Usage
 
-## - 包含237大神及hanwckf大神immortalwrt-mt798x
-## - immortalwrt openwrt-21.02 稳定版分支
-## - 为了方便编译移除21.02 luci及packages自带的SSR及Passwall源码, 方便直接拉取最新版
-## - 固件新增Passwall,Istore, Aliyunwebdav,网络加速及Openclash插件
+-- 包含237大神及hanwckf大神版immortalwrt-mt798x
+-- immortalwrt openwrt-21.02 稳定版分支
+-- 为了方便编译移除21.02 luci及packages自带的SSR及Passwall源码, 方便直接拉取最新版
+-- 固件新增Passwall,Istore, Aliyunwebdav,网络加速及Openclash插件
 
 
 ## Credits
