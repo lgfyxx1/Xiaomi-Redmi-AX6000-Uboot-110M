@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Xiaomi-Redmi-AX6000-Padavanonly
+name: Xiaomi-Redmi-AX6000-padavanonly
 
 on:
   repository_dispatch:
