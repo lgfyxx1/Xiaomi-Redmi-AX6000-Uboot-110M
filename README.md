@@ -10,10 +10,10 @@ A template for building OpenWrt with GitHub Actions
 
 ## Usage
 
--- 包含237大神及hanwckf大神版immortalwrt-mt798x
--- immortalwrt openwrt-21.02 稳定版分支
--- 为了方便编译移除21.02 luci及packages自带的SSR及Passwall源码, 方便直接拉取最新版
--- 固件新增Passwall,Istore, Aliyunwebdav,网络加速及Openclash插件
+-- 包含237大神及hanwckf大神版immortalwrt-mt798x <br />
+-- immortalwrt openwrt-21.02 稳定版分支 <br />
+-- 为了方便编译移除21.02 luci及packages自带的SSR及Passwall源码, 方便直接拉取最新版 <br />
+-- 固件新增Passwall,Istore, Aliyunwebdav,网络加速及Openclash插件 <br />
 
 
 ## Credits
