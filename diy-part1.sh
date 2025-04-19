@@ -14,10 +14,6 @@
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-# echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-# echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-# sed -i '$a src-git openwrt_kiddin9 https://github.com/kiddin9/openwrt-packages' feeds.conf.default
-
-# sed -i '$a src-git openwrt-passwall https://github.com/xiaorouji/openwrt-passwall.git
-# sed -i '$a src-git openwrt-passwall-packages https://github.com/xiaorouji/openwrt-passwall-packages.git
-# sed -i '$a aliyundrive-webdav https://github.com/messense/aliyundrive-webdav.git
+echo 'src-git-full passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
+echo 'src-git-full passwall-packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+echo 'src-git-full openclash https://github.com/vernesong/OpenClash' >>feeds.conf.default
