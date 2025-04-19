@@ -40,7 +40,7 @@ on:
 ### 环境变量设置
 
 env:
-  REPO_URL: https://github.com/lgfyxx/immortalwrt-mt798x
+  REPO_URL: https://github.com/lgfyxx1/immortalwrt-mt798x
   REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: hanwckf/.config
