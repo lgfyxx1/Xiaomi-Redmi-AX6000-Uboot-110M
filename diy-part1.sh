@@ -15,5 +15,5 @@
 
 # Add a feed source
 echo 'src-git-full passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git-full passwall-packages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+echo 'src-git-full passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
 echo 'src-git-full openclash https://github.com/vernesong/OpenClash' >>feeds.conf.default
