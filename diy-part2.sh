@@ -19,6 +19,10 @@ sed -i 's/192.168.1.1/192.168.3.10/g' package/base-files/files/bin/config_genera
 # Modify hostname
 #sed -i 's/OpenWrt/P3TERX-Router/g' package/base-files/files/bin/config_generate
 
+##-----------------强制使用helloworld的xray-core(v26.x)覆盖内置旧版(v1.8.3)------------------
+./scripts/feeds install -d y -f -p helloworld xray-core
+##----------------------------------------
+
 ##-----------------Add OpenClash Meta(Mihomo) core------------------
 curl -sL -m 30 --retry 2 https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz -o /tmp/clash_meta.tar.gz
 tar zxvf /tmp/clash_meta.tar.gz -C /tmp >/dev/null 2>&1
